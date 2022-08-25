@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 
 const About = () => {
   return (
-    <Layout>
+    <Layout title="About">
       <h1>About my app</h1>
     </Layout>
   );

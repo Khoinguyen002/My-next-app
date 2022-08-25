@@ -1,9 +1,10 @@
 import Layout from "../components/Layout";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
-	return (
-		<Layout>
-			<h1>Hello</h1>
-		</Layout>
-	);
+  return (
+    <Layout title="Home">
+      <h1 className={styles.title}>Hello</h1>
+    </Layout>
+  );
 }

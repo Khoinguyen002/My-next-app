@@ -3,11 +3,11 @@ import NavbarMenu from "./NavbarMenu";
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title }) => {
   return (
     <Container>
       <Head>
-        <title>Document</title>
+        <title>{title}</title>
       </Head>
       <header>
         <NavbarMenu />
