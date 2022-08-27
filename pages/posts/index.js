@@ -9,7 +9,9 @@ const Posts = ({ posts }) => {
       {posts.map((post) => (
         <Card key={post.id} className="my-3 shadow">
           <Card.Body>
-            <Card.Title>{post.title}</Card.Title>
+            <Card.Title>
+              {post.id} --- {post.title}
+            </Card.Title>
             <Card.Text>{post.body}</Card.Text>
             <Link href={`/posts/${post.id}`}>
               <Card.Link>See More</Card.Link>
@@ -22,7 +24,7 @@ const Posts = ({ posts }) => {
 };
 
 export const getStaticProps = async () => {
-  const posts = await getPosts();
+  const posts = await getPosts(10);
   return {
     props: {
       posts,
