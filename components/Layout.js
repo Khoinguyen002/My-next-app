@@ -1,7 +1,6 @@
 import Head from "next/head";
 import NavbarMenu from "./NavbarMenu";
 import { Container } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Layout = ({ children, title }) => {
   return (

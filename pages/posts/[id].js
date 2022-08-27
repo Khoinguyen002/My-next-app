@@ -1,9 +1,14 @@
 import React from "react";
 import { getPostsId, getPostsById } from "../../lib/post";
 import Layout from "../../components/Layout";
-import { Card } from "react-bootstrap";
+import { Card, Spinner } from "react-bootstrap";
+import { useRouter } from "next/router";
 
 const Post = ({ post }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <Spinner animation="grow" role={"banner"}></Spinner>;
+  }
   return (
     <Layout>
       <Card key={post.id}>
@@ -17,10 +22,10 @@ const Post = ({ post }) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = await getPostsId();
+  const paths = await getPostsId(5);
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
