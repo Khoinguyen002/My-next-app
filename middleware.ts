@@ -2,8 +2,7 @@ import { NextRequest, NextResponse, NextFetchEvent } from "next/server";
 
 export function middleware(req: NextRequest, event: NextFetchEvent) {
   const url = req.nextUrl;
-  url.pathname = "/api/hello";
-  console.log(url);
+  url.pathname = "/api/post";
 
   return NextResponse.rewrite(url);
 }
