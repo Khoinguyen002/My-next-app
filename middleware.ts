@@ -1,11 +1,13 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse, NextFetchEvent } from "next/server";
 
-export function middleware(req: NextRequest, res: NextResponse) {
-    const url = req.url;
-    
-  return NextResponse.rewrite(`${url}about`)
+export function middleware(req: NextRequest, event: NextFetchEvent) {
+  const url = req.nextUrl;
+  url.pathname = "/api/hello";
+  console.log(url);
+
+  return NextResponse.rewrite(url);
 }
 
 export const config = {
-  matcher: ['/'],
-}
+  matcher: ["/secret-page"],
+};
