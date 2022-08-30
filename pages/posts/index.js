@@ -2,8 +2,11 @@ import Link from "next/link";
 import { Card } from "react-bootstrap";
 import Layout from "../../components/Layout";
 import { getPosts } from "../../lib/post";
+import { useRouter } from "next/router";
 
 const Posts = ({ posts }) => {
+  const router = useRouter();
+  console.log(router.query);
   return (
     <Layout>
       {posts.map((post) => (

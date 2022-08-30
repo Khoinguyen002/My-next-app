@@ -3,18 +3,20 @@ import { getPostsId, getPostsById } from "../../lib/post";
 import Layout from "../../components/Layout";
 import { Card, Spinner } from "react-bootstrap";
 import { useRouter } from "next/router";
+import style from "./post.module.scss";
 
 const Post = ({ post }) => {
   const router = useRouter();
+
   if (router.isFallback) {
     return <Spinner animation="grow" role={"banner"}></Spinner>;
   }
   return (
     <Layout>
-      <Card key={post.id}>
+      <Card key={post?.id}>
         <Card.Body>
-          <Card.Title>{post.title}</Card.Title>
-          <Card.Text>{post.body}</Card.Text>
+          <Card.Title className={style["card-title"]}>{post?.title}</Card.Title>
+          <Card.Text>{post?.body}</Card.Text>
         </Card.Body>
       </Card>
     </Layout>
