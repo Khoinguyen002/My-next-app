@@ -7,7 +7,7 @@ import style from "./post.module.scss";
 
 const Post = ({ post }) => {
   const router = useRouter();
-
+  console.log(router);
   if (router.isFallback) {
     return <Spinner animation="grow" role={"banner"}></Spinner>;
   }
