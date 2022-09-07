@@ -3,9 +3,10 @@ import Layout from "../../components/Layout";
 import { Button, Card } from "react-bootstrap";
 import Link from "next/link";
 import path from "path";
+import { useRouter } from "next/router";
 
 export default function Random({ joke }) {
-  console.log(path.join("/", "post"));
+  console.log(useRouter().query.destination);
   return (
     <Layout>
       <Card className="my-3 shadow">
