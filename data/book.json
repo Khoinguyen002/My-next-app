@@ -1,5 +1,6 @@
 {
     "name": "xyz",
     "age": 18,
-    "address": "VN"
+    "address": "VN",
+    "weight": 50
 }
