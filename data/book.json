@@ -2,5 +2,6 @@
     "name": "xyz",
     "age": 18,
     "address": "VN",
-    "weight": 50
+    "weight": 50,
+    "height": 160
 }
